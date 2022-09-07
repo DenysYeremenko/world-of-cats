@@ -1,5 +1,5 @@
 import styles from './Layout.module.css';
-import { NavLink, Outlet, Link } from 'react-router-dom';
+import { Outlet, Link } from 'react-router-dom';
 import logo from './images/logo.svg';
 import voting from './images/voting.svg';
 import breeds from './images/breeds.svg';

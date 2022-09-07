@@ -1,6 +1,3 @@
-import styles from './Voting.module.css';
-import { Category } from '../Category/Category';
-
 export const Voting = props => {
   return (
     <section>

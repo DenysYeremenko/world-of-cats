@@ -11,7 +11,7 @@ export const Layout = props => {
     <div className={styles.layoutSection}>
       <div className={styles.layoutWrap}>
         <header>
-          <Link to="/">
+          <Link to="">
             <img src={logo} alt="Pets Paw" className={styles.logo} />
           </Link>
         </header>
@@ -23,17 +23,17 @@ export const Layout = props => {
         <nav>
           <ul className={styles.navList}>
             <NavItem
-              linkPath="category/voting"
+              linkPath="world-of-cats/category/voting"
               imgSrc={voting}
               linkName="voting"
             />
             <NavItem
-              linkPath="category/breeds"
+              linkPath="world-of-cats/category/breeds"
               imgSrc={breeds}
               linkName="breeds"
             />
             <NavItem
-              linkPath="category/gallery"
+              linkPath="world-of-cats/category/gallery"
               imgSrc={gallery}
               linkName="gallery"
             />

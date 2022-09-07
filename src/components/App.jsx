@@ -12,7 +12,7 @@ export const App = () => {
   return (
     <div className={styles.container}>
       <Routes>
-        <Route path="/" element={<Layout />}>
+        <Route path="/world-of-cats" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="category/*" element={<Category />}>
             <Route path="voting" element={<Voting />}></Route>

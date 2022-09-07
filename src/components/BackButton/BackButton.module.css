@@ -1,0 +1,17 @@
+.button {
+  width: 40px;
+  height: 40px;
+  background-color: #fbe0dc;
+  border: none;
+  border-radius: 10px;
+  background-image: url(./images/back-icon.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px;
+}
+
+.button:hover {
+  cursor: pointer;
+  background-color: #ff868e;
+  background-image: url(./images/back-icon-hover.svg);
+}

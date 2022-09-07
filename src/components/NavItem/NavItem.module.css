@@ -1,0 +1,56 @@
+.navItem:hover .navButton {
+  background: #fbe0dc;
+  color: #ff868e;
+  cursor: pointer;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  transition: 250ms;
+}
+
+.navItem img:hover {
+  border-color: #fff;
+}
+
+.navLink {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  gap: 10px;
+}
+
+.navLink > img {
+  width: 132px;
+  height: 192px;
+  font-family: inherit;
+  transition: 250ms;
+}
+
+.selected #navIcon {
+  border: 4px solid #fbe0dc;
+}
+
+.selected button {
+  color: #fff;
+  background-color: #ff868e;
+  box-shadow: none;
+}
+
+.selected:hover #navButton {
+  color: #fff;
+  background-color: #ff868e;
+}
+
+.navButton {
+  width: 140px;
+  height: 35px;
+  background: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-family: inherit;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: calc(16 / 12);
+  text-align: center;
+  letter-spacing: 2px;
+  color: #ff868e;
+}

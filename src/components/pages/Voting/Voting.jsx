@@ -1,51 +1,52 @@
+import styles from './Voting.module.css';
+import { CategoryTitle } from 'components/CategoryTitle/CategoryTitle';
+import catExample from './images/cat-example.png';
+import smallLike from './images/icons/like-icon.svg';
+
 export const Voting = props => {
   return (
     <section>
-      {/* <div className={styles.votingTopWrap}>
-        <form action="">
-          <label htmlFor="search" className={styles.searchInputLabel}>
-            <input
-              type="search"
-              name=""
-              id="search"
-              placeholder="Search for breeds by name"
-              className={styles.inputSearch}
-            />
-            <button type="submit" className={styles.submitButton}></button>
-          </label>
-        </form>
-        <ul className={styles.UserCollections}>
-          <UserCollectionsLink linkIcon={likes} linkName="likes" />
-          <UserCollectionsLink linkIcon={favourites} linkName="favourites" />
-          <UserCollectionsLink linkIcon={dislikes} linkName="dislikes" />
-        </ul>
-      </div>
-      <div className={styles.votingBottomWrap}>
-        <BackButton />
-        <h2>voting</h2> */}
-      <div>
-        <img src="" alt="cat" />
-        <ul>
-          <li>
-            <button>add to likes</button>
+      <CategoryTitle categoryName="voting" />
+      <div className={styles.imgWrap}>
+        <img src={catExample} alt="cat" className={styles.catImage} />
+        <ul className={styles.buttonList}>
+          <li className={styles.buttonItem}>
+            <button className={styles.addButton}></button>
           </li>
-          <li>
-            <button>add to favourites</button>
+          <li className={styles.buttonItem}>
+            <button className={styles.addButton}></button>
           </li>
-          <li>
-            <button>add to dislikes</button>
-          </li>
-        </ul>
-        <ul>
-          <li>
-            <time>22:35</time>
-            <p>
-              Image ID:<span>fQSunHvl8</span> was added to Favourites
-            </p>
-            <span>Icon</span>
+          <li className={styles.buttonItem}>
+            <button className={styles.addButton}></button>
           </li>
         </ul>
       </div>
+      <ul className={styles.collectionList}>
+        <li className={styles.collectionItem}>
+          <time className={styles.collectionTime}>22:35</time>
+          <p className={styles.collectionText}>
+            Image ID: <span className={styles.collectionId}>fQSunHvl8</span> was
+            added to Favourites
+          </p>
+          <img src={smallLike} alt="" className={styles.collectionIcon} />
+        </li>
+        <li className={styles.collectionItem}>
+          <time className={styles.collectionTime}>22:35</time>
+          <p className={styles.collectionText}>
+            Image ID: <span className={styles.collectionId}>fQSunHvl8</span> was
+            added to Favourites
+          </p>
+          <img src={smallLike} alt="" className={styles.collectionIcon} />
+        </li>
+        <li className={styles.collectionItem}>
+          <time className={styles.collectionTime}>22:35</time>
+          <p className={styles.collectionText}>
+            Image ID: <span className={styles.collectionId}>fQSunHvl8</span> was
+            added to Favourites
+          </p>
+          <img src={smallLike} alt="" className={styles.collectionIcon} />
+        </li>
+      </ul>
     </section>
   );
 };

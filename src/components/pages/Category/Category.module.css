@@ -64,14 +64,14 @@
   gap: 10px;
 }
 
-.votingTopWrap {
+.categoryTopWrap {
   display: flex;
   gap: 10px;
 
   margin-bottom: 10px;
 }
 
-.votingBottomWrap {
+.categoryBottomWrap {
   background: #ffffff;
   border-radius: 20px;
   padding: 20px;

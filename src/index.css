@@ -7,7 +7,10 @@ body {
   background: #f8f8f7;
 }
 
-ul {
+ul,
+p,
+h1,
+h2 {
   list-style: none;
   margin: 0;
   padding: 0;

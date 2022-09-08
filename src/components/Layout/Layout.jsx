@@ -15,7 +15,7 @@ export const Layout = props => {
             <img src={logo} alt="Pets Paw" className={styles.logo} />
           </Link>
         </header>
-        <h1 className={styles.header}>Welcome to World of Cats</h1>
+        <h1 className={styles.title}>Welcome to World of Cats</h1>
         <p className={styles.headerCaption}>
           Welcome to MI 2022 Front-end test
         </p>

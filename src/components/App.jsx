@@ -4,8 +4,8 @@ import { Routes, Route } from 'react-router-dom';
 import { Layout } from './Layout/Layout';
 import { Home } from './pages/Home/Home';
 import { Voting } from './pages/Voting/Voting';
-import { Breeds } from './pages/Breeds/breeds';
-import { Gallery } from './pages/Gallery/gallery';
+import { Breeds } from './pages/Breeds/Breeds';
+import { Gallery } from './pages/Gallery/Gallery';
 import { Category } from './pages/Category/Category';
 
 export const App = () => {

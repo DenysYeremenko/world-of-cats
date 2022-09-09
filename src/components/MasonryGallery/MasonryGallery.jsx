@@ -1,7 +1,6 @@
 import styles from './MasonryGallery.module.css';
 import classNames from 'classnames';
 import { PaginationButtons } from 'components/PaginationButtons/PaginationButtons';
-import { Link } from 'react-router-dom';
 
 export const MasonryGallery = ({ setIsSelectedBreed }) => {
   return (

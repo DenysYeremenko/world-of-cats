@@ -6,7 +6,6 @@ import { Voting } from './pages/Voting/Voting';
 import { Breeds } from './pages/Breeds/Breeds';
 import { Gallery } from './pages/Gallery/Gallery';
 import { Category } from './pages/Category/Category';
-import { SelectedBreed } from './pages/SelectedBreed/SelectedBreed';
 
 export const App = () => {
   return (

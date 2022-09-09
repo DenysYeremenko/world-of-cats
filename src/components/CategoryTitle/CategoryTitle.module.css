@@ -19,3 +19,18 @@
   margin: 0;
   color: #ffffff;
 }
+
+.breedId {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90px;
+  height: 40px;
+  background: #ff868e;
+  border-radius: 10px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: calc(30 / 20);
+  letter-spacing: 2px;
+  color: #ffffff;
+}

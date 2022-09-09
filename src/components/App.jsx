@@ -1,12 +1,12 @@
 import styles from './App.module.css';
 import { Routes, Route } from 'react-router-dom';
-
 import { Layout } from './Layout/Layout';
 import { Home } from './pages/Home/Home';
 import { Voting } from './pages/Voting/Voting';
 import { Breeds } from './pages/Breeds/Breeds';
 import { Gallery } from './pages/Gallery/Gallery';
 import { Category } from './pages/Category/Category';
+import { SelectedBreed } from './pages/SelectedBreed/SelectedBreed';
 
 export const App = () => {
   return (

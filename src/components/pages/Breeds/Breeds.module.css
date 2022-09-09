@@ -42,25 +42,29 @@
 .sortingButton {
   width: 40px;
   height: 40px;
-  background: #f8f8f7;
+  background-color: #f8f8f7;
   border-radius: 10px;
   border: none;
 }
 
 .sortingButtonZ_A {
-  background: url(./images/icons/z-aSorting.svg) no-repeat center;
+  background: url(./images/icons/z-aSorting.svg) no-repeat center #f8f8f7;
 }
 
 .sortingButtonZ_A:hover {
   cursor: pointer;
-  background: url(./images/icons/z-aSorting-hover.svg) no-repeat center;
+  background: url(./images/icons/z-aSorting-hover.svg) no-repeat center #f8f8f7;
 }
 
 .sortingButtonA_Z {
-  background: url(./images/icons/a-zSorting.svg) no-repeat center;
+  background: url(./images/icons/a-zSorting.svg) no-repeat center #f8f8f7;
 }
 
 .sortingButtonA_Z:hover {
   cursor: pointer;
-  background: url(./images/icons/a-zSorting-hover.svg) no-repeat center;
+  background: url(./images/icons/a-zSorting-hover.svg) no-repeat center #f8f8f7;
+}
+
+.selectedBreedStyle {
+  flex-direction: column;
 }

@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/world-of-cats/static/css/main.65a817ec.css",
-    "main.js": "/world-of-cats/static/js/main.2b25af83.js",
+    "main.js": "/world-of-cats/static/js/main.8d71d428.js",
     "static/media/breeds.svg": "/world-of-cats/static/media/breeds.c0274528ec4106afa608c17eb19574a4.svg",
     "static/media/cat-example.png": "/world-of-cats/static/media/cat-example.3a52a44372a6c7fcf542.png",
     "static/media/home-page.png": "/world-of-cats/static/media/home-page.1a41db8095af88cb627d.png",
@@ -31,10 +31,10 @@
     "static/media/arrow-hover.svg": "/world-of-cats/static/media/arrow-hover.f1c994be4fae4160e7a4.svg",
     "static/media/arrow-active.svg": "/world-of-cats/static/media/arrow-active.ca52455a1c5b9384ea2a.svg",
     "main.65a817ec.css.map": "/world-of-cats/static/css/main.65a817ec.css.map",
-    "main.2b25af83.js.map": "/world-of-cats/static/js/main.2b25af83.js.map"
+    "main.8d71d428.js.map": "/world-of-cats/static/js/main.8d71d428.js.map"
   },
   "entrypoints": [
     "static/css/main.65a817ec.css",
-    "static/js/main.2b25af83.js"
+    "static/js/main.8d71d428.js"
   ]
 }

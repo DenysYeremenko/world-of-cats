@@ -3,10 +3,12 @@ import classNames from 'classnames';
 import { PaginationButtons } from 'components/PaginationButtons/PaginationButtons';
 import { Link, useLocation } from 'react-router-dom';
 
-export const MasonryGallery = ({ setIsSelectedBreed, breedsState }) => {
+export const MasonryGallery = ({ breedsState }) => {
   const location = useLocation();
-  const topGallery = breedsState.filter((breed, index) => index <= 4);
-  const buttomGallery = breedsState.filter((breed, index) => index > 4);
+  const topGallery =
+    breedsState && breedsState.filter((breed, index) => index <= 4);
+  const buttomGallery =
+    breedsState && breedsState.filter((breed, index) => index > 4);
 
   return (
     breedsState && (

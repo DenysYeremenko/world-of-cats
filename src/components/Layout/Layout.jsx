@@ -23,17 +23,17 @@ export const Layout = props => {
         <nav>
           <ul className={styles.navList}>
             <NavItem
-              linkPath="world-of-cats/category/voting"
+              linkPath="category/voting"
               imgSrc={voting}
               linkName="voting"
             />
             <NavItem
-              linkPath="world-of-cats/category/breeds"
+              linkPath="category/breeds"
               imgSrc={breeds}
               linkName="breeds"
             />
             <NavItem
-              linkPath="world-of-cats/category/gallery"
+              linkPath="category/gallery"
               imgSrc={gallery}
               linkName="gallery"
             />

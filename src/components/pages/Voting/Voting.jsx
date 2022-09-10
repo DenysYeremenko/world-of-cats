@@ -3,10 +3,11 @@ import { CategoryTitle } from 'components/CategoryTitle/CategoryTitle';
 import catExample from './images/cat-example.png';
 import smallLike from './images/icons/like-icon.svg';
 
-export const Voting = props => {
+export const Voting = () => {
+  const locationBack = '/';
   return (
     <section>
-      <CategoryTitle categoryName="voting" />
+      <CategoryTitle categoryName="voting" location={locationBack} />
       <div className={styles.imgWrap}>
         <img src={catExample} alt="cat" className={styles.catImage} />
         <ul className={styles.buttonList}>

@@ -4,8 +4,11 @@ import { UserCollectionsLink } from 'components/UserCollectionsLink/UserCollecti
 import likes from './images/icons/likes.svg';
 import favourites from './images/icons/favourites.svg';
 import dislikes from './images/icons/dislikes.svg';
+import { useState } from 'react';
 
 export const Category = ({ categoryName }) => {
+  const [breedsState, setBreedsState] = useState(null);
+
   return (
     <>
       <div className={styles.categoryTopWrap}>
@@ -28,7 +31,7 @@ export const Category = ({ categoryName }) => {
         </ul>
       </div>
       <div className={styles.categoryBottomWrap}>
-        <Outlet />
+        <Outlet context={[breedsState, setBreedsState]} />
       </div>
     </>
   );

@@ -6,16 +6,18 @@ import { Voting } from './pages/Voting/Voting';
 import { Breeds } from './pages/Breeds/Breeds';
 import { Gallery } from './pages/Gallery/Gallery';
 import { Category } from './pages/Category/Category';
+import { SelectedBreed } from './pages/SelectedBreed/SelectedBreed';
 
 export const App = () => {
   return (
     <div className={styles.container}>
       <Routes>
-        <Route path="/world-of-cats" element={<Layout />}>
+        <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="category/*" element={<Category />}>
             <Route path="voting" element={<Voting />}></Route>
             <Route path="breeds" element={<Breeds />}></Route>
+            <Route path="breeds/:breedId" element={<SelectedBreed />}></Route>
             <Route path="gallery" element={<Gallery />}></Route>
           </Route>
         </Route>

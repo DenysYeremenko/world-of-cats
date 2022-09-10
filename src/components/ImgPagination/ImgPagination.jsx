@@ -1,23 +1,19 @@
 import styles from './ImgPagination.module.css';
 
-export const ImgPagination = props => {
+export const ImgPagination = ({ images, changeImage }) => {
   return (
     <ul className={styles.imgPaginationList}>
-      <li className={styles.imgPaginationItem}>
-        <button type="button" className={styles.imgPaginationButton}></button>
-      </li>
-      <li className={styles.imgPaginationItem}>
-        <button type="button" className={styles.imgPaginationButton}></button>
-      </li>
-      <li className={styles.imgPaginationItem}>
-        <button type="button" className={styles.imgPaginationButton}></button>
-      </li>
-      <li className={styles.imgPaginationItem}>
-        <button type="button" className={styles.imgPaginationButton}></button>
-      </li>
-      <li className={styles.imgPaginationItem}>
-        <button type="button" className={styles.imgPaginationButton}></button>
-      </li>
+      {images.map(({ url }) => (
+        <li key={url} className={styles.imgPaginationItem}>
+          <button
+            type="button"
+            className={styles.imgPaginationButton}
+            onClick={() => {
+              changeImage(url);
+            }}
+          ></button>
+        </li>
+      ))}
     </ul>
   );
 };

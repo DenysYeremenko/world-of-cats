@@ -17,7 +17,7 @@ export const PaginationButtons = ({ setPage, page }) => {
         type="button"
         className={classNames(styles.pagButton, styles.nextButton)}
         onClick={() => {
-          setPage(page + 1);
+          page < 6 && setPage(page + 1);
         }}
       >
         next

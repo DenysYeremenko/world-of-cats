@@ -2,26 +2,20 @@ import styles from './Breeds.module.css';
 import classNames from 'classnames';
 import { CategoryTitle } from 'components/CategoryTitle/CategoryTitle';
 import { MasonryGallery } from 'components/MasonryGallery/MasonryGallery';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { getCatBreeds } from 'services/getCatAPI';
 import { useOutletContext } from 'react-router-dom';
 
 export const Breeds = props => {
   const [breedsState, setBreedsState] = useOutletContext();
+  const [page, setPage] = useState(1);
   const location = useLocation();
   const locationBack = location.state?.from ?? '/';
 
   useEffect(() => {
-    if (!breedsState) {
-      const getBreeds = async () => {
-        const breedsData = await getCatBreeds(1, 10);
-        setBreedsState(breedsData);
-      };
-
-      getBreeds();
-    }
-  }, [breedsState, setBreedsState]);
+    getCatBreeds(page, 10).then(breedsData => setBreedsState(breedsData));
+  }, [setBreedsState, page]);
 
   return (
     <section className={styles.BreedsSection}>
@@ -59,7 +53,7 @@ export const Breeds = props => {
         </form>
       </div>
 
-      <MasonryGallery breedsState={breedsState} />
+      <MasonryGallery breedsState={breedsState} setPage={setPage} page={page} />
     </section>
   );
 };

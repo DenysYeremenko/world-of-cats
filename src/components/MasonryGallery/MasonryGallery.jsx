@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { PaginationButtons } from 'components/PaginationButtons/PaginationButtons';
 import { Link, useLocation } from 'react-router-dom';
 
-export const MasonryGallery = ({ breedsState }) => {
+export const MasonryGallery = ({ breedsState, setPage, page }) => {
   const location = useLocation();
   const topGallery =
     breedsState && breedsState.filter((breed, index) => index <= 4);
@@ -26,7 +26,10 @@ export const MasonryGallery = ({ breedsState }) => {
                 )}
               >
                 <img
-                  src={breed.image.url}
+                  src={
+                    breed?.image?.url ??
+                    'https://1080motion.com/wp-content/uploads/2018/06/NoImageFound.jpg.png'
+                  }
                   className={styles.galleryImg}
                   alt="cat"
                 />
@@ -58,180 +61,10 @@ export const MasonryGallery = ({ breedsState }) => {
                   </button>
                 </Link>
               );
-            })}{' '}
+            })}
           </div>
-          {/* <Link
-            to={breedsState[0].id}
-            state={{ from: location }}
-            className={classNames(styles.item_1, styles.galleryItems)}
-          >
-            <img
-              src={breedsState[0].image.url}
-              className={styles.galleryImg}
-              alt="cat"
-            />
-            <button type="button" className={styles.galleryButton}>
-              {breedsState[0].name}
-            </button>
-          </Link>
-          <Link
-            to={breedsState[1].id}
-            state={{ from: location }}
-            className={classNames(styles.item_2, styles.galleryItems)}
-            onClick={() => {
-              setIsSelectedBreed(true);
-            }}
-          >
-            <img
-              src={breedsState[1].image.url}
-              className={styles.galleryImg}
-              alt="cat"
-            />
-            <button type="button" className={styles.galleryButton}>
-              {breedsState[1].name}
-            </button>
-          </Link>
-          <Link
-            to="breedId"
-            state={{ from: location }}
-            className={classNames(styles.item_3, styles.galleryItems)}
-            onClick={() => {
-              setIsSelectedBreed(true);
-            }}
-          >
-            <img
-              src={breedsState[2].image.url}
-              className={styles.galleryImg}
-              alt="cat"
-            />
-            <button type="button" className={styles.galleryButton}>
-              {breedsState[2].name}
-            </button>
-          </Link>
-          <Link
-            to="breedId"
-            state={{ from: location }}
-            className={classNames(styles.item_4, styles.galleryItems)}
-            onClick={() => {
-              setIsSelectedBreed(true);
-            }}
-          >
-            <img
-              src={breedsState[3].image.url}
-              className={styles.galleryImg}
-              alt="cat"
-            />
-            <button type="button" className={styles.galleryButton}>
-              {breedsState[3].name}
-            </button>
-          </Link>
-          <Link
-            to="breedId"
-            state={{ from: location }}
-            className={classNames(styles.item_c, styles.galleryItems)}
-            onClick={() => {
-              setIsSelectedBreed(true);
-            }}
-          >
-            <img
-              src={breedsState[4].image.url}
-              className={styles.galleryImg}
-              alt="cat"
-            />
-            <button type="button" className={styles.galleryButton}>
-              {breedsState[4].name}
-            </button>
-          </Link>
         </div>
-        <div className={styles.gallery}>
-          <Link
-            to="breedId"
-            state={{ from: location }}
-            className={classNames(styles.item_d, styles.galleryItems)}
-            onClick={() => {
-              setIsSelectedBreed(true);
-            }}
-          >
-            <img
-              src={breedsState[5].image.url}
-              className={styles.galleryImg}
-              alt="cat"
-            />
-            <button type="button" className={styles.galleryButton}>
-              {breedsState[5].name}
-            </button>
-          </Link>
-          <Link
-            to="breedId"
-            state={{ from: location }}
-            className={styles.galleryItems}
-            onClick={() => {
-              setIsSelectedBreed(true);
-            }}
-          >
-            <img
-              src={breedsState[6].image.url}
-              className={styles.galleryImg}
-              alt="cat"
-            />
-            <button type="button" className={styles.galleryButton}>
-              {breedsState[6].name}
-            </button>
-          </Link>
-          <Link
-            to="breedId"
-            state={{ from: location }}
-            className={classNames(styles.item_e, styles.galleryItems)}
-            onClick={() => {
-              setIsSelectedBreed(true);
-            }}
-          >
-            <img
-              src={breedsState[7].image.url}
-              className={styles.galleryImg}
-              alt="cat"
-            />
-            <button type="button" className={styles.galleryButton}>
-              {breedsState[7].name}
-            </button>
-          </Link>
-
-          <Link
-            to="breedId"
-            state={{ from: location }}
-            className={classNames(styles.item_f, styles.galleryItems)}
-            onClick={() => {
-              setIsSelectedBreed(true);
-            }}
-          >
-            <img
-              src={breedsState[8].image.url}
-              className={styles.galleryImg}
-              alt="cat"
-            />
-            <button type="button" className={styles.galleryButton}>
-              {breedsState[8].name}
-            </button>
-          </Link>
-          <Link
-            to="breedId"
-            state={{ from: location }}
-            className={styles.galleryItems}
-            onClick={() => {
-              setIsSelectedBreed(true);
-            }}
-          >
-            <img
-              src={breedsState[9].image.url}
-              className={styles.galleryImg}
-              alt="cat"
-            />
-            <button type="button" className={styles.galleryButton}>
-              {breedsState[9].name}
-            </button>
-          </Link> */}
-        </div>
-        <PaginationButtons />
+        <PaginationButtons setPage={setPage} page={page} />
       </>
     )
   );

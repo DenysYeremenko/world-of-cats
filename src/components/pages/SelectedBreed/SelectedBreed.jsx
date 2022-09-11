@@ -49,7 +49,7 @@ export const SelectedBreed = props => {
         </div>
         <div className={styles.descriptionContainer}>
           <h3 className={styles.descriptionTitle}>
-            {breedData.breedInfo.name}
+            <span className={styles.titleSpan}>{breedData.breedInfo.name}</span>
           </h3>
           <p className={styles.descriptionCaption}>Family companion cat</p>
           <ul className={styles.descriptionList}>

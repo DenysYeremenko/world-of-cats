@@ -49,18 +49,22 @@
 
 .sortingButtonZ_A {
   background: url(./images/icons/z-aSorting.svg) no-repeat center #f8f8f7;
+  transition: 200ms;
 }
 
-.sortingButtonZ_A:hover {
+.sortingButtonZ_A:hover,
+.DESC {
   cursor: pointer;
   background: url(./images/icons/z-aSorting-hover.svg) no-repeat center #f8f8f7;
 }
 
 .sortingButtonA_Z {
   background: url(./images/icons/a-zSorting.svg) no-repeat center #f8f8f7;
+  transition: 200ms;
 }
 
-.sortingButtonA_Z:hover {
+.sortingButtonA_Z:hover,
+.ASC {
   cursor: pointer;
   background: url(./images/icons/a-zSorting-hover.svg) no-repeat center #f8f8f7;
 }

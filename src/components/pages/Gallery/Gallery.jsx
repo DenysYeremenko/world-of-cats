@@ -1,3 +1,9 @@
+import { CategoryTitle } from 'components/CategoryTitle/CategoryTitle';
+
 export const Gallery = props => {
-  return <section>Gallery</section>;
+  return (
+    <section>
+      <CategoryTitle categoryName="gallery" location={'/'} />
+    </section>
+  );
 };

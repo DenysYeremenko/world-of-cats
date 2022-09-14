@@ -1,14 +1,14 @@
 import classNames from 'classnames';
 import styles from './PaginationButtons.module.css';
 
-export const PaginationButtons = ({ setPage, page }) => {
+export const PaginationButtons = ({ setSearchParams, page, limit, order }) => {
   return (
     <div className={styles.paginationWrap}>
       <button
         type="button"
         className={classNames(styles.pagButton, styles.prevButton)}
         onClick={() => {
-          page > 1 && setPage(page - 1);
+          page > 0 && setSearchParams({ page: page - 1, limit, order });
         }}
       >
         prev
@@ -17,7 +17,19 @@ export const PaginationButtons = ({ setPage, page }) => {
         type="button"
         className={classNames(styles.pagButton, styles.nextButton)}
         onClick={() => {
-          page < 6 && setPage(page + 1);
+          if (page < 13 && limit === 5) {
+            setSearchParams({ page: page + 1, limit, order });
+            // setPage(page + 1);
+          } else if (page < 6 && limit === 10) {
+            setSearchParams({ page: page + 1, limit, order });
+            // setPage(page + 1);
+          } else if (page < 4 && limit === 15) {
+            setSearchParams({ page: page + 1, limit, order });
+            // setPage(page + 1);
+          } else if (page < 3 && limit === 20) {
+            setSearchParams({ page: page + 1, limit, order });
+            // setPage(page + 1);
+          }
         }}
       >
         next

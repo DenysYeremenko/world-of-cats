@@ -4,9 +4,11 @@ axios.defaults.baseURL = 'https://api.thecatapi.com/v1/';
 axios.defaults.headers.common['x-api-key'] =
   'live_6SswE7BwMNdqFYWFoUpChtN8htjHUjsSPsQVNp6QImJSNPfVG1cJX4UkzNO9LWVX';
 
-export const getCatBreeds = async (page, limit) => {
+export const getCatBreeds = async ({ limit, page, order }) => {
   try {
-    let response = await axios.get(`breeds/?limit=${limit}&page=${page}`);
+    let response = await axios.get(
+      `breeds/?order=${order}&limit=${limit}&page=${page}`
+    );
     return response.data;
   } catch (err) {
     console.log(err);

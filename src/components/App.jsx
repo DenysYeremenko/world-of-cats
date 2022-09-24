@@ -3,7 +3,6 @@ import { Routes, Route } from 'react-router-dom';
 import { SharedLayout } from './SharedLayout/SharedLayout';
 import { HomeView } from './pages/HomeView/HomeView';
 import { lazy } from 'react';
-// import SearchView from './pages/SearchView/SearchView';
 
 const SharedSearchBar = lazy(() => import('./SharedSearchBar/SharedSearchBar'));
 const VotingView = lazy(() => import('./pages/VotingView/VotingView'));

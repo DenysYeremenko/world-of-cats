@@ -1,0 +1,74 @@
+.BreedsSection {
+  display: flex;
+  flex-direction: column;
+}
+.topWrap {
+  display: flex;
+  gap: 10px;
+}
+
+.breedsForm {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.limitSelect,
+.breedsSelect {
+  background: url(./images/icons/arrow.svg) no-repeat right;
+  background-color: #f8f8f7;
+  background-position-x: calc(100% - 10px);
+  border: none;
+  outline: none;
+  appearance: none;
+  font-family: inherit;
+  font-size: 16px;
+  line-height: calc(24 / 16);
+  color: #8c8c8c;
+  padding: 8px 10px;
+  border-radius: 10px;
+}
+
+.breedsSelect {
+  width: 225px;
+  height: 40px;
+}
+
+.limitSelect {
+  width: 100px;
+  height: 40px;
+}
+
+.sortingButton {
+  width: 40px;
+  height: 40px;
+  background-color: #f8f8f7;
+  border-radius: 10px;
+  border: none;
+}
+
+.sortingButtonZ_A {
+  background: url(./images/icons/z-aSorting.svg) no-repeat center #f8f8f7;
+  transition: 200ms;
+}
+
+.sortingButtonZ_A:hover,
+.DESC {
+  cursor: pointer;
+  background: url(./images/icons/z-aSorting-hover.svg) no-repeat center #f8f8f7;
+}
+
+.sortingButtonA_Z {
+  background: url(./images/icons/a-zSorting.svg) no-repeat center #f8f8f7;
+  transition: 200ms;
+}
+
+.sortingButtonA_Z:hover,
+.ASC {
+  cursor: pointer;
+  background: url(./images/icons/a-zSorting-hover.svg) no-repeat center #f8f8f7;
+}
+
+.selectedBreedStyle {
+  flex-direction: column;
+}

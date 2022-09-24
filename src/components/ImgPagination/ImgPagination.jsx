@@ -3,7 +3,7 @@ import styles from './ImgPagination.module.css';
 export const ImgPagination = ({ images, changeImage }) => {
   return (
     <ul className={styles.imgPaginationList}>
-      {images.map(({ url }) => (
+      {images.map(url => (
         <li key={url} className={styles.imgPaginationItem}>
           <button
             type="button"

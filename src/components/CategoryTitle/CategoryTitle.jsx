@@ -4,9 +4,9 @@ import { useLocation, useParams } from 'react-router-dom';
 
 export const CategoryTitle = ({ categoryName }) => {
   const location = useLocation();
-  const backLinkHref = location.state?.from ?? 'breeds';
+  const backLinkHref = location.state?.from ?? '/';
   const { breedId } = useParams();
-  console.log(location);
+
   return (
     <div className={styles.wrap}>
       <BackButton location={backLinkHref} />

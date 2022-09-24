@@ -1,7 +1,19 @@
 {
   "files": {
-    "main.css": "/world-of-cats/static/css/main.7f9a0866.css",
-    "main.js": "/world-of-cats/static/js/main.f8dfdae6.js",
+    "main.css": "/world-of-cats/static/css/main.30b5c1b3.css",
+    "main.js": "/world-of-cats/static/js/main.89a4657a.js",
+    "static/css/459.ea25f0a5.chunk.css": "/world-of-cats/static/css/459.ea25f0a5.chunk.css",
+    "static/js/459.6c9e4c65.chunk.js": "/world-of-cats/static/js/459.6c9e4c65.chunk.js",
+    "static/css/189.14cb7516.chunk.css": "/world-of-cats/static/css/189.14cb7516.chunk.css",
+    "static/js/189.094e8560.chunk.js": "/world-of-cats/static/js/189.094e8560.chunk.js",
+    "static/css/117.3d0267ab.chunk.css": "/world-of-cats/static/css/117.3d0267ab.chunk.css",
+    "static/js/117.fef5f2c3.chunk.js": "/world-of-cats/static/js/117.fef5f2c3.chunk.js",
+    "static/css/811.5872fdcf.chunk.css": "/world-of-cats/static/css/811.5872fdcf.chunk.css",
+    "static/js/811.6174179b.chunk.js": "/world-of-cats/static/js/811.6174179b.chunk.js",
+    "static/css/957.07059dd2.chunk.css": "/world-of-cats/static/css/957.07059dd2.chunk.css",
+    "static/js/957.f79af21a.chunk.js": "/world-of-cats/static/js/957.f79af21a.chunk.js",
+    "static/css/210.07059dd2.chunk.css": "/world-of-cats/static/css/210.07059dd2.chunk.css",
+    "static/js/210.6bf521ee.chunk.js": "/world-of-cats/static/js/210.6bf521ee.chunk.js",
     "static/media/breeds.svg": "/world-of-cats/static/media/breeds.c0274528ec4106afa608c17eb19574a4.svg",
     "static/media/cat-example.png": "/world-of-cats/static/media/cat-example.3a52a44372a6c7fcf542.png",
     "static/media/home-page.png": "/world-of-cats/static/media/home-page.1a41db8095af88cb627d.png",
@@ -30,11 +42,23 @@
     "static/media/arrow.svg": "/world-of-cats/static/media/arrow.4f609fcfbc5bc04c89dc.svg",
     "static/media/arrow-hover.svg": "/world-of-cats/static/media/arrow-hover.f1c994be4fae4160e7a4.svg",
     "static/media/arrow-active.svg": "/world-of-cats/static/media/arrow-active.ca52455a1c5b9384ea2a.svg",
-    "main.7f9a0866.css.map": "/world-of-cats/static/css/main.7f9a0866.css.map",
-    "main.f8dfdae6.js.map": "/world-of-cats/static/js/main.f8dfdae6.js.map"
+    "main.30b5c1b3.css.map": "/world-of-cats/static/css/main.30b5c1b3.css.map",
+    "main.89a4657a.js.map": "/world-of-cats/static/js/main.89a4657a.js.map",
+    "459.ea25f0a5.chunk.css.map": "/world-of-cats/static/css/459.ea25f0a5.chunk.css.map",
+    "459.6c9e4c65.chunk.js.map": "/world-of-cats/static/js/459.6c9e4c65.chunk.js.map",
+    "189.14cb7516.chunk.css.map": "/world-of-cats/static/css/189.14cb7516.chunk.css.map",
+    "189.094e8560.chunk.js.map": "/world-of-cats/static/js/189.094e8560.chunk.js.map",
+    "117.3d0267ab.chunk.css.map": "/world-of-cats/static/css/117.3d0267ab.chunk.css.map",
+    "117.fef5f2c3.chunk.js.map": "/world-of-cats/static/js/117.fef5f2c3.chunk.js.map",
+    "811.5872fdcf.chunk.css.map": "/world-of-cats/static/css/811.5872fdcf.chunk.css.map",
+    "811.6174179b.chunk.js.map": "/world-of-cats/static/js/811.6174179b.chunk.js.map",
+    "957.07059dd2.chunk.css.map": "/world-of-cats/static/css/957.07059dd2.chunk.css.map",
+    "957.f79af21a.chunk.js.map": "/world-of-cats/static/js/957.f79af21a.chunk.js.map",
+    "210.07059dd2.chunk.css.map": "/world-of-cats/static/css/210.07059dd2.chunk.css.map",
+    "210.6bf521ee.chunk.js.map": "/world-of-cats/static/js/210.6bf521ee.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7f9a0866.css",
-    "static/js/main.f8dfdae6.js"
+    "static/css/main.30b5c1b3.css",
+    "static/js/main.89a4657a.js"
   ]
 }

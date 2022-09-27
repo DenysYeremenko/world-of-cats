@@ -1,0 +1,14 @@
+.hamburgerMenuBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background: #ffffff;
+  border: none;
+  border-radius: 20px;
+  transition: 200ms;
+  &:active {
+    background: #fbe0dc;
+  }
+}

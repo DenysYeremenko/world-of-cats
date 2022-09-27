@@ -1,13 +1,33 @@
-import styles from './SharedLayout.module.css';
-import { Outlet, Link } from 'react-router-dom';
+import styles from './SharedLayout.module.scss';
+import { Outlet, Link, useLocation } from 'react-router-dom';
 import logo from './images/logo.svg';
-import voting from './images/voting.svg';
-import breeds from './images/breeds.svg';
-import gallery from './images/gallery.svg';
-import { NavItem } from 'components/NavItem/NavItem';
-import { Suspense } from 'react';
+import { Suspense, useEffect } from 'react';
+import { useMediaQuery } from 'react-responsive';
+import { useDispatch, useSelector } from 'react-redux';
+import { getMainShowed } from 'redux/selectors';
+import { toogleMainSectionShowed } from 'redux/sharedLayoutSlice';
+import { NavigationMenu } from 'components/NavigationMenu/NavigationMenu';
 
 export const SharedLayout = props => {
+  const mainShowed = useSelector(getMainShowed);
+  const dispatch = useDispatch();
+  const location = useLocation();
+  const isDesktop = useMediaQuery({ minWidth: 1440 });
+  const isTablet = useMediaQuery({ maxWidth: 1439 });
+  const isMobile = useMediaQuery({ maxWidth: 375 });
+
+  useEffect(() => {
+    if (isDesktop) {
+      dispatch(toogleMainSectionShowed(true));
+    } else if (!isDesktop && location.pathname === '/') {
+      dispatch(toogleMainSectionShowed(false));
+    }
+  }, [dispatch, isDesktop, location.pathname]);
+
+  const handleNavLink = () => {
+    dispatch(toogleMainSectionShowed(true));
+  };
+
   return (
     <div className={styles.layoutSection}>
       <div className={styles.layoutWrap}>
@@ -29,35 +49,19 @@ export const SharedLayout = props => {
             Breeds: <span className={styles.readyText}>ready</span>
           </li>
           <li>
-            G allery: <span className={styles.inProgressText}>in progress</span>
+            Gallery: <span className={styles.inProgressText}>in progress</span>
           </li>
         </ul>
 
-        <nav>
-          <ul className={styles.navList}>
-            <NavItem
-              linkPath="category/voting"
-              imgSrc={voting}
-              linkName="voting"
-            />
-            <NavItem
-              linkPath="category/breeds"
-              imgSrc={breeds}
-              linkName="breeds"
-            />
-            <NavItem
-              linkPath="category/gallery"
-              imgSrc={gallery}
-              linkName="gallery"
-            />
-          </ul>
-        </nav>
+        <NavigationMenu handleNavLink={handleNavLink} />
       </div>
-      <main className={styles.mainSection}>
-        <Suspense>
-          <Outlet />
-        </Suspense>
-      </main>
+      {mainShowed && (
+        <main className={styles.mainSection}>
+          <Suspense>
+            <Outlet />
+          </Suspense>
+        </main>
+      )}
     </div>
   );
 };

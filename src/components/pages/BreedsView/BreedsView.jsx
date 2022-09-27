@@ -5,6 +5,7 @@ import { BreedsGallery } from 'components/BreedsGallery/BreedsGallery';
 import { useEffect, useMemo } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { breedsList } from 'services/breedsList';
+import { useGetBreedsQuery } from 'services/catApi';
 
 const BreedsView = props => {
   const navigate = useNavigate();
@@ -13,6 +14,10 @@ const BreedsView = props => {
     () => Object.fromEntries([...searchParams]),
     [searchParams]
   );
+
+  const { data, isFetching } = useGetBreedsQuery(params, {
+    skip: !params.limit,
+  });
 
   useEffect(() => {
     !params.limit && setSearchParams({ page: 0, limit: 5, order: 'ASC' });
@@ -96,7 +101,7 @@ const BreedsView = props => {
           ></button>
         </form>
       </div>
-      <BreedsGallery />
+      <BreedsGallery data={data} isFetching={isFetching} />
     </section>
   );
 };

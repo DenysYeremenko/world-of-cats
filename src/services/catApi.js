@@ -35,7 +35,24 @@ export const catApi = createApi({
         };
       },
     }),
+    getBreedsByName: builder.query({
+      query: queryName => `breeds/search?q=${queryName}`,
+    }),
+    getRandomImage: builder.query({
+      query: () => `images/search`,
+      transformResponse: (response, meta, arg) => response[0],
+    }),
+    // getImageById: builder.query({
+    //   query: imageId => `images/${imageId}`,
+    //   transformResponse: (response, meta, arg) => response[0],
+    // }),
   }),
 });
 
-export const { useGetBreedsQuery, useGetSelectedBreedQuery } = catApi;
+export const {
+  useGetBreedsQuery,
+  useGetSelectedBreedQuery,
+  useGetBreedsByNameQuery,
+  useGetRandomImageQuery,
+  // useGetImageByIdQuery,
+} = catApi;

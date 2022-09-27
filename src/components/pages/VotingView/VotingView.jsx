@@ -1,53 +1,72 @@
-import styles from './VotingView.module.css';
+import styles from './VotingView.module.scss';
 import { CategoryTitle } from 'components/CategoryTitle/CategoryTitle';
-import catExample from './images/cat-example.png';
-import smallLike from './images/icons/like-icon.svg';
+import { useGetRandomImageQuery } from 'services/catApi';
+import { addLike, addFavourite, addDislike } from 'redux/votingViewSlice';
+import { useDispatch } from 'react-redux';
+import { useState } from 'react';
+import { nanoid } from '@reduxjs/toolkit';
+import { Loader } from 'components/Loader/Loader';
+import { VotingsHitoryList } from 'components/VotingsHitoryList/VotingsHitoryList';
 
 const VotingView = () => {
-  const locationBack = '/';
+  const [fetchIncrement, setFetchIncrement] = useState('');
+  const dispatch = useDispatch();
+  const { data, isFetching } = useGetRandomImageQuery(fetchIncrement);
+
+  const handleVoting = e => {
+    const buttonId = e.target.id;
+
+    switch (buttonId) {
+      case 'likeBtn':
+        dispatch(addLike({ url: data.url, id: data.id }));
+        setFetchIncrement(nanoid());
+        break;
+      case 'favouriteBtn':
+        dispatch(addFavourite({ url: data.url, id: data.id }));
+        setFetchIncrement(nanoid());
+        break;
+      case 'dislikeBtn':
+        dispatch(addDislike({ url: data.url, id: data.id }));
+        setFetchIncrement(nanoid());
+        break;
+      default:
+        break;
+    }
+  };
+
   return (
     <section>
-      <CategoryTitle categoryName="voting" location={locationBack} />
+      <CategoryTitle categoryName="voting" />
       <div className={styles.imgWrap}>
-        <img src={catExample} alt="cat" className={styles.catImage} />
+        {isFetching && <Loader />}
+        {!isFetching && (
+          <img src={data && data.url} alt="cat" className={styles.catImage} />
+        )}
         <ul className={styles.buttonList}>
           <li className={styles.buttonItem}>
-            <button className={styles.addButton}></button>
+            <button
+              className={styles.addButton}
+              id="likeBtn"
+              onClick={handleVoting}
+            ></button>
           </li>
           <li className={styles.buttonItem}>
-            <button className={styles.addButton}></button>
+            <button
+              className={styles.addButton}
+              id="favouriteBtn"
+              onClick={handleVoting}
+            ></button>
           </li>
           <li className={styles.buttonItem}>
-            <button className={styles.addButton}></button>
+            <button
+              className={styles.addButton}
+              id="dislikeBtn"
+              onClick={handleVoting}
+            ></button>
           </li>
         </ul>
       </div>
-      <ul className={styles.collectionList}>
-        <li className={styles.collectionItem}>
-          <time className={styles.collectionTime}>22:35</time>
-          <p className={styles.collectionText}>
-            Image ID: <span className={styles.collectionId}>fQSunHvl8</span> was
-            added to Favourites
-          </p>
-          <img src={smallLike} alt="" className={styles.collectionIcon} />
-        </li>
-        <li className={styles.collectionItem}>
-          <time className={styles.collectionTime}>22:35</time>
-          <p className={styles.collectionText}>
-            Image ID: <span className={styles.collectionId}>fQSunHvl8</span> was
-            added to Favourites
-          </p>
-          <img src={smallLike} alt="" className={styles.collectionIcon} />
-        </li>
-        <li className={styles.collectionItem}>
-          <time className={styles.collectionTime}>22:35</time>
-          <p className={styles.collectionText}>
-            Image ID: <span className={styles.collectionId}>fQSunHvl8</span> was
-            added to Favourites
-          </p>
-          <img src={smallLike} alt="" className={styles.collectionIcon} />
-        </li>
-      </ul>
+      <VotingsHitoryList />
     </section>
   );
 };

@@ -57,6 +57,21 @@
   color: #ff868e;
 }
 
+.deleteIcon {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  transform: translateY(101%);
+  bottom: 0;
+  left: 0;
+}
+
+.galleryItems:hover .deleteIcon {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .type1Item_1 {
   position: relative;
   grid-row: 1 / 3;

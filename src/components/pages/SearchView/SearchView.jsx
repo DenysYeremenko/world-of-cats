@@ -1,22 +1,32 @@
 import { CategoryTitle } from 'components/CategoryTitle/CategoryTitle';
+import { Loader } from 'components/Loader/Loader';
+import { MasonryGalleryType1 } from 'components/MasonryGallery/MasonryGallery';
 import { useSearchParams } from 'react-router-dom';
-// import { breedsList } from 'services/breedsList';
-// import { useGetSelectedBreedQuery } from 'services/catApi';
-// import styles from './SearchView.module.css';
+import { useGetBreedsByNameQuery } from 'services/catApi';
+import styles from './SearchView.module.scss';
 
 const SearchView = props => {
   const [searchParams] = useSearchParams();
   const queryName = searchParams.get('queryName') ?? '';
-  // const filteredBreeds = breedsList.filter(breed =>
-  //   breed.name.toLowerCase().includes(queryName.toLowerCase())
-  // );
-  // const breedIds = filteredBreeds.map(b => b.id).join(',');
-  // const { data, error, isFetching } = useGetSelectedBreedQuery(breedIds);
+  const { data, error, isFetching, isLoading } = useGetBreedsByNameQuery(
+    queryName,
+    {
+      skip: !queryName,
+    }
+  );
 
   return (
     <div>
       <CategoryTitle categoryName="search" />
-      {queryName && <h4>Search results for: {queryName}</h4>}
+      {queryName && (
+        <p className={styles.searchTitle}>
+          Search results for:{' '}
+          <span className={styles.queryName}>{queryName}</span>
+        </p>
+      )}
+      {isFetching && <Loader />}
+      {data && data.length <= 0 && <h3>Sorry, breeds not found</h3>}
+      {data && <MasonryGalleryType1 galleryArray={data} />}
     </div>
   );
 };

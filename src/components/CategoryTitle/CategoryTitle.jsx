@@ -6,7 +6,6 @@ export const CategoryTitle = ({ categoryName }) => {
   const location = useLocation();
   const backLinkHref = location.state?.from ?? '/';
   const { breedId } = useParams();
-
   return (
     <div className={styles.wrap}>
       <BackButton location={backLinkHref} />

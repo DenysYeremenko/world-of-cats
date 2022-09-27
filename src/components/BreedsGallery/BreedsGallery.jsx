@@ -3,21 +3,11 @@ import {
   MasonryGalleryType1,
   MasonryGalleryType2,
 } from 'components/MasonryGallery/MasonryGallery';
-import { useGetBreedsQuery } from 'services/catApi';
 import { Loader } from 'components/Loader/Loader';
-import { useSearchParams } from 'react-router-dom';
-import { useMemo } from 'react';
+import { useLocation } from 'react-router-dom';
 
-export const BreedsGallery = () => {
-  const [searchParams, setSearchParams] = useSearchParams();
-  const params = useMemo(
-    () => Object.fromEntries([...searchParams]),
-    [searchParams]
-  );
-
-  const { data, isFetching } = useGetBreedsQuery(params, {
-    skip: !params.limit,
-  });
+export const BreedsGallery = ({ data, isFetching }) => {
+  const location = useLocation();
 
   const gallery5 = data && data.filter((breed, index) => index <= 4);
   const gallery10 =
@@ -33,15 +23,10 @@ export const BreedsGallery = () => {
       {data && (
         <>
           <MasonryGalleryType1 galleryArray={gallery5} />
-          {Number(params.limit) > 5 && (
-            <MasonryGalleryType2 galleryArray={gallery10} />
-          )}
+          {data.length > 5 && <MasonryGalleryType2 galleryArray={gallery10} />}
           {data.length > 10 && <MasonryGalleryType1 galleryArray={gallery15} />}
           {data.length > 15 && <MasonryGalleryType2 galleryArray={gallery20} />}
-          <PaginationButtons
-            setSearchParams={setSearchParams}
-            params={params}
-          />
+          {location.pathname.includes('breeds') && <PaginationButtons />}
         </>
       )}
     </>

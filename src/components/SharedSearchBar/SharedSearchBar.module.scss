@@ -1,9 +1,36 @@
+.menuWrap {
+  display: flex;
+  justify-content: center;
+  padding-top: 110px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #f8f8f7;
+  & button:nth-child(1) {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+  }
+}
+
+.navList {
+  background-color: teal;
+}
+
 .searchInputLabel {
   position: relative;
 }
 
 .inputSearch {
-  width: 470px;
+  width: 335px;
+  @media screen and (min-width: 768px) {
+    width: 430px;
+  }
+  @media screen and (min-width: 1440px) {
+    width: 470px;
+  }
   height: 60px;
   background: #ffffff;
   border: none;
@@ -67,8 +94,8 @@
 .categoryTopWrap {
   display: flex;
   gap: 10px;
-
   margin-bottom: 10px;
+  justify-content: space-between;
 }
 
 .categoryBottomWrap {

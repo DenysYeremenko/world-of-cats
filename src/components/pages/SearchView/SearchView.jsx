@@ -8,12 +8,9 @@ import styles from './SearchView.module.scss';
 const SearchView = props => {
   const [searchParams] = useSearchParams();
   const queryName = searchParams.get('queryName') ?? '';
-  const { data, error, isFetching, isLoading } = useGetBreedsByNameQuery(
-    queryName,
-    {
-      skip: !queryName,
-    }
-  );
+  const { data, isFetching } = useGetBreedsByNameQuery(queryName, {
+    skip: !queryName,
+  });
 
   return (
     <div>

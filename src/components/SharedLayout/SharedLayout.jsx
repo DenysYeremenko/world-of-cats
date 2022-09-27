@@ -13,8 +13,6 @@ export const SharedLayout = props => {
   const dispatch = useDispatch();
   const location = useLocation();
   const isDesktop = useMediaQuery({ minWidth: 1440 });
-  const isTablet = useMediaQuery({ maxWidth: 1439 });
-  const isMobile = useMediaQuery({ maxWidth: 375 });
 
   useEffect(() => {
     if (isDesktop) {
@@ -43,13 +41,18 @@ export const SharedLayout = props => {
         <p className={styles.navCaption}>Lets start using The Cat API</p>
         <ul>
           <li>
-            Voting: <span className={styles.inProgressText}>in progress</span>
+            Voting page: <span className={styles.readyText}>ready</span>
           </li>
           <li>
-            Breeds: <span className={styles.readyText}>ready</span>
+            Voting Likes, Favourites, Dislikes pages:{' '}
+            <span className={styles.readyText}>ready</span>
           </li>
           <li>
-            Gallery: <span className={styles.inProgressText}>in progress</span>
+            Breed page: <span className={styles.readyText}>ready</span>
+          </li>
+          <li>
+            Gallery page:{' '}
+            <span className={styles.inProgressText}>in progress</span>
           </li>
         </ul>
 

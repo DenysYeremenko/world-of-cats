@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkworld_of_cats=self.webpackChunkworld_of_cats||[]).push([[957],{8957:function(e,c,t){t.r(c);var a=t(104),n=t(184);c.default=function(e){return(0,n.jsx)("section",{children:(0,n.jsx)(a.g,{categoryName:"gallery",location:"/"})})}}}]);
+//# sourceMappingURL=957.eeac4c2b.chunk.js.map

@@ -42,10 +42,19 @@ export const catApi = createApi({
       query: () => `images/search`,
       transformResponse: (response, meta, arg) => response[0],
     }),
-    // getImageById: builder.query({
-    //   query: imageId => `images/${imageId}`,
-    //   transformResponse: (response, meta, arg) => response[0],
-    // }),
+    getRandomImages: builder.query({
+      query: ({ breed, type, order, limit }) =>
+        `images/search?order=${order}&mime_types=${type}${
+          breed !== 'none' ? `&breed_ids=${breed}` : ''
+        }&limit=${limit}`,
+      transformResponse: (response, meta, arg) =>
+        response.map(r => {
+          return {
+            image: { url: r.url },
+            id: r.id,
+          };
+        }),
+    }),
   }),
 });
 
@@ -54,5 +63,5 @@ export const {
   useGetSelectedBreedQuery,
   useGetBreedsByNameQuery,
   useGetRandomImageQuery,
-  // useGetImageByIdQuery,
+  useGetRandomImagesQuery,
 } = catApi;

@@ -2,18 +2,20 @@ import classNames from 'classnames';
 import { Link, useLocation } from 'react-router-dom';
 import styles from './MasonryGallery.module.css';
 import deleteIcon from './images/icons/delete.svg';
+import favouriteIcon from './images/icons/favourite.svg';
 import { useDispatch } from 'react-redux';
 import {
   deleteLike,
   deleteFavourite,
   deleteDislike,
+  addFavourite,
 } from 'redux/votingViewSlice';
 
 export const MasonryGalleryType1 = ({ galleryArray }) => {
   const location = useLocation();
 
   const dispatch = useDispatch();
-  const handleDeleteVotingsItem = id => {
+  const handleDeleteVotingsItem = ({ id, url }) => {
     switch (location.pathname) {
       case '/category/likes':
         dispatch(deleteLike(id));
@@ -23,6 +25,9 @@ export const MasonryGalleryType1 = ({ galleryArray }) => {
         break;
       case '/category/dislikes':
         dispatch(deleteDislike(id));
+        break;
+      case '/category/gallery':
+        dispatch(addFavourite({ id, url }));
         break;
       default:
         break;
@@ -38,7 +43,10 @@ export const MasonryGalleryType1 = ({ galleryArray }) => {
             key={breed.id}
             to={breed.name ? `/category/breeds/${breed.id}` : ''}
             state={{ from: location }}
-            onClick={() => !breed.name && handleDeleteVotingsItem(breed.id)}
+            onClick={() =>
+              !breed.name &&
+              handleDeleteVotingsItem({ id: breed.id, url: breed.image.url })
+            }
             className={classNames(
               styles[`type1Item_${index + 1}`],
               styles.galleryItems
@@ -60,7 +68,11 @@ export const MasonryGalleryType1 = ({ galleryArray }) => {
             )}
             {!breed.name && (
               <img
-                src={deleteIcon}
+                src={
+                  location.pathname !== '/category/gallery'
+                    ? deleteIcon
+                    : favouriteIcon
+                }
                 alt="delete"
                 className={styles.deleteIcon}
               />

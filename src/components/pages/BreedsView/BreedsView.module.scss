@@ -15,6 +15,7 @@
 
 .limitSelect,
 .breedsSelect {
+  cursor: pointer;
   background: url(./images/icons/arrow.svg) no-repeat right;
   background-color: #f8f8f7;
   background-position-x: calc(100% - 10px);
@@ -27,6 +28,10 @@
   color: #8c8c8c;
   padding: 8px 10px;
   border-radius: 10px;
+
+  &:hover {
+    outline: 2px solid #fbe0dc;
+  }
 }
 
 .breedsSelect {

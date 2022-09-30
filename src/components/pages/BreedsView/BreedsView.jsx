@@ -1,4 +1,4 @@
-import styles from './BreedsView.module.css';
+import styles from './BreedsView.module.scss';
 import classNames from 'classnames';
 import { CategoryTitle } from 'components/CategoryTitle/CategoryTitle';
 import { BreedsGallery } from 'components/BreedsGallery/BreedsGallery';

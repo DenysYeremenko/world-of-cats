@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/794.a8a8e2e9.chunk.css","mappings":"AAAA,+BAGE,cAFA,eACA,iBAEA,gBAEF,6BAEE,cADA,eACA","sources":["pages/SearchView/SearchView.module.scss"],"sourcesContent":[".searchTitle {\n  font-size: 20px;\n  line-height: 29px;\n  color: #8c8c8c;\n  margin-top: 20px;\n}\n.queryName {\n  font-weight: 500;\n  color: #1d1d1d;\n}\n"],"names":[],"sourceRoot":""}

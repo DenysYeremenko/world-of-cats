@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { getTimeNow } from 'services/getTimeNow';
+import { getTimeNow } from 'utils/getTimeNow';
 
 export const votingViewSlice = createSlice({
   name: 'votings',

@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import { useMemo } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import styles from './PaginationButtons.module.css';
+import styles from './PaginationButtons.module.scss';
 
 export const PaginationButtons = () => {
   const [searchParams, setSearchParams] = useSearchParams();

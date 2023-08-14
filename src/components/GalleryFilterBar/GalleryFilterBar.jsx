@@ -1,116 +1,102 @@
 import { useMemo } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { breedsList } from 'services/breedsList';
+import { breedsList } from 'utils/breedsList';
 import styles from './GalleryFilterBar.module.scss';
 
 export const GalleryFilterBar = ({ refetch }) => {
   const [searchParams, setSearchParams] = useSearchParams();
-  const params = useMemo(
-    () => Object.fromEntries([...searchParams]),
-    [searchParams]
-  );
+  const params = useMemo(() => Object.fromEntries([...searchParams]), [searchParams]);
 
-  const handleOrderChange = e => {
+  const handleParamChange = (paramName, paramValue) => {
     setSearchParams({
-      order: e.target.value,
-      type: params.type,
-      breed: params.breed,
-      limit: params.limit,
+      ...params,
+      [paramName]: paramValue,
     });
   };
 
-  const handleTypeChange = e => {
-    setSearchParams({
-      order: params.order,
-      type: e.target.value,
-      breed: params.breed,
-      limit: params.limit,
-    });
-  };
+  const orderOptions = [
+    { value: 'RAND', label: 'Random' },
+    { value: 'DESC', label: 'Desc' },
+    { value: 'ASC', label: 'Asc' },
+  ];
 
-  const handleBreedChange = e => {
-    setSearchParams({
-      order: params.order,
-      type: params.type,
-      breed: e.target.value,
-      limit: params.limit,
-    });
-  };
+  const typeOptions = [
+    { value: 'jpg,gif,png', label: 'All' },
+    { value: 'jpg,png', label: 'Static' },
+    { value: 'gif', label: 'Animated' },
+  ];
 
-  const handleLimitChange = e => {
-    setSearchParams({
-      order: params.order,
-      type: params.type,
-      breed: params.breed,
-      limit: e.target.value,
-    });
-  };
+  const limitOptions = [5, 10, 15, 20].map(value => ({
+    value: value.toString(),
+    label: `${value} items per page`,
+  }));
 
-  const handleRefetchButton = e => {
+  const handleRefetchButton = () => {
     refetch();
   };
 
   return (
     <div className={styles.formWrap}>
       <form className={styles.filterForm}>
-        <label className={styles.selectLabel} htmlFor="order">
+        <label className={styles.selectLabel} htmlFor='order'>
           <span className={styles.labelTextWrap}>order</span>
           <select
             className={styles.formSelect}
-            id="order"
-            onChange={handleOrderChange}
+            id='order'
+            onChange={e => handleParamChange('order', e.target.value)}
           >
-            <option value="RAND">Random</option>
-            <option value="DESC">Desc</option>
-            <option value="ASC">Asc</option>
+            {orderOptions.map(option => (
+              <option key={option.value} value={option.value}>
+                {option.label}
+              </option>
+            ))}
           </select>
         </label>
-        <label className={styles.selectLabel} htmlFor="type">
+        <label className={styles.selectLabel} htmlFor='type'>
           <span className={styles.labelTextWrap}>type</span>
           <select
             className={styles.formSelect}
-            id="type"
-            onChange={handleTypeChange}
+            id='type'
+            onChange={e => handleParamChange('type', e.target.value)}
           >
-            <option value="jpg,gif,png">All</option>
-            <option value="jpg,png">Static</option>
-            <option value="gif">Animated</option>
+            {typeOptions.map(option => (
+              <option key={option.value} value={option.value}>
+                {option.label}
+              </option>
+            ))}
           </select>
         </label>
-        <label className={styles.selectLabel} htmlFor="breed">
+        <label className={styles.selectLabel} htmlFor='breed'>
           <span className={styles.labelTextWrap}>breed</span>
           <select
             className={styles.formSelect}
-            id="breed"
-            onChange={handleBreedChange}
+            id='breed'
+            onChange={e => handleParamChange('breed', e.target.value)}
           >
-            <option value="none">None</option>
+            <option value='none'>None</option>
             {breedsList.map(({ name, id }) => (
-              <option value={id} key={id}>
+              <option key={id} value={id}>
                 {name}
               </option>
             ))}
           </select>
         </label>
-        <label className={styles.selectLabel} htmlFor="limit">
+        <label className={styles.selectLabel} htmlFor='limit'>
           <span className={styles.labelTextWrap}>limit</span>
           <select
             className={styles.formSelect}
-            id="limit"
-            onChange={handleLimitChange}
+            id='limit'
+            onChange={e => handleParamChange('limit', e.target.value)}
           >
-            <option value="5">5 items per page</option>
-            <option value="10">10 items per page</option>
-            <option value="15">15 items per page</option>
-            <option value="20">20 items per page</option>
+            {limitOptions.map(option => (
+              <option key={option.value} value={option.value}>
+                {option.label}
+              </option>
+            ))}
           </select>
         </label>
       </form>
-      <button
-        type="button"
-        className={styles.refetchButton}
-        onClick={handleRefetchButton}
-      ></button>
+      <button type='button' className={styles.refetchButton} onClick={handleRefetchButton}></button>
     </div>
   );
 };

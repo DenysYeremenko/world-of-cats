@@ -34,9 +34,9 @@ export const SharedLayout = props => {
             <img src={logo} alt="Pets Paw" className={styles.logo} />
           </Link>
         </header>
-        <h1 className={styles.title}>Welcome to World of Cats</h1>
+        <h1 className={styles.title}>Hi, Cat Admirer!</h1>
         <p className={styles.headerCaption}>
-          Welcome to MI 2022 Front-end test
+          Welcome to World of Cats
         </p>
         <p className={styles.navCaption}>Lets start using The Cat API</p>
         <ul>
@@ -44,15 +44,15 @@ export const SharedLayout = props => {
             Voting page: <span className={styles.readyText}>ready</span>
           </li>
           <li>
-            Voting Likes, Favourites, Dislikes pages:{' '}
-            <span className={styles.readyText}>ready</span>
-          </li>
-          <li>
-            Breed page: <span className={styles.readyText}>ready</span>
+            Breeds page: <span className={styles.readyText}>ready</span>
           </li>
           <li>
             Gallery page:{' '}
-            <span className={styles.inProgressText}>in progress</span>
+            <span className={styles.readyText}>ready</span>
+          </li>
+          <li>
+            Likes, Favourites, Dislikes pages:{' '}
+            <span className={styles.readyText}>ready</span>
           </li>
         </ul>
 

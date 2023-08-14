@@ -1,0 +1,20 @@
+@import-normalize;
+
+/* bring in normalize.css styles */
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;500&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Jost';
+  background: #f8f8f7;
+}
+
+ul, p, h1, h2, h3 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}

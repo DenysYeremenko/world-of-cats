@@ -1,4 +1,4 @@
-import styles from './UserCollectionsLink.module.css';
+import styles from './UserCollectionsLink.module.scss';
 import { NavLink, useLocation } from 'react-router-dom';
 
 export const UserCollectionsLink = ({ linkIcon, linkName }) => {

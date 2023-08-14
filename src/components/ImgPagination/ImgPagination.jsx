@@ -1,4 +1,4 @@
-import styles from './ImgPagination.module.css';
+import styles from './ImgPagination.module.scss';
 
 export const ImgPagination = ({ images, changeImage }) => {
   return (

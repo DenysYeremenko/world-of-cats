@@ -1,0 +1,34 @@
+.imgPaginationList {
+  position: absolute;
+  bottom: -15px;
+  left: 275px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 90px;
+  height: 30px;
+  background: #ffffff;
+  border-radius: 20px;
+}
+
+.imgPaginationItem {
+  width: 10px;
+  height: 10px;
+  background: #fbe0dc;
+  border-radius: 10px;
+
+  &:hover {
+    background: #ff868e;
+  }
+}
+
+.imgPaginationButton {
+  cursor: pointer;
+  display: block;
+  padding: 0;
+  width: 10px;
+  height: 10px;
+  background: none;
+  border: none;
+}

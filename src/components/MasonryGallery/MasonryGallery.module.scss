@@ -1,0 +1,9 @@
+.gallery {
+  max-width: 640px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 200px 200px 200px;
+  grid-template-rows: 140px 140px 140px;
+  grid-gap: 20px;
+  margin-top: 20px;
+}

@@ -14,3 +14,5 @@ export const sharedLayoutSlice = createSlice({
 
 const { actions } = sharedLayoutSlice;
 export const { toogleMainSectionShowed } = actions;
+export default sharedLayoutSlice.reducer;
+

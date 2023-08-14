@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import { getVotingsHistory } from 'redux/selectors';
+import { getVotingsHistory } from 'redux/votingView/selectors';
 import styles from './VotingsHitoryList.module.scss';
 import likeIcon from './images/icons/like.svg';
 import favouriteIcon from './images/icons/favourite.svg';
@@ -31,7 +31,7 @@ export const VotingsHitoryList = props => {
               Image ID: <span className={styles.collectionId}>{id} </span>
               was added to {type}
             </p>
-            <img src={votingIcon()} alt="" className={styles.collectionIcon} />
+            <img src={votingIcon()} alt='' className={styles.collectionIcon} />
           </li>
         );
       })}

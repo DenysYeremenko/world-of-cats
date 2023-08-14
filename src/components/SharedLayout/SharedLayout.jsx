@@ -4,8 +4,8 @@ import logo from './images/logo.svg';
 import { Suspense, useEffect } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import { useDispatch, useSelector } from 'react-redux';
-import { getMainShowed } from 'redux/selectors';
-import { toogleMainSectionShowed } from 'redux/sharedLayoutSlice';
+import { getMainShowed } from 'redux/sharedLayout/selectors';
+import { toogleMainSectionShowed } from 'redux/sharedLayout/sharedLayoutSlice';
 import { NavigationMenu } from 'components/NavigationMenu/NavigationMenu';
 
 export const SharedLayout = props => {
@@ -30,14 +30,12 @@ export const SharedLayout = props => {
     <div className={styles.layoutSection}>
       <div className={styles.layoutWrap}>
         <header>
-          <Link to="">
-            <img src={logo} alt="Pets Paw" className={styles.logo} />
+          <Link to=''>
+            <img src={logo} alt='Pets Paw' className={styles.logo} />
           </Link>
         </header>
         <h1 className={styles.title}>Hi, Cat Admirer!</h1>
-        <p className={styles.headerCaption}>
-          Welcome to World of Cats
-        </p>
+        <p className={styles.headerCaption}>Welcome to World of Cats</p>
         <p className={styles.navCaption}>Lets start using The Cat API</p>
         <ul>
           <li>
@@ -47,12 +45,10 @@ export const SharedLayout = props => {
             Breeds page: <span className={styles.readyText}>ready</span>
           </li>
           <li>
-            Gallery page:{' '}
-            <span className={styles.readyText}>ready</span>
+            Gallery page: <span className={styles.readyText}>ready</span>
           </li>
           <li>
-            Likes, Favourites, Dislikes pages:{' '}
-            <span className={styles.readyText}>ready</span>
+            Likes, Favourites, Dislikes pages: <span className={styles.readyText}>ready</span>
           </li>
         </ul>
 

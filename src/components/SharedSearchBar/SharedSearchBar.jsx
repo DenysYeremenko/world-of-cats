@@ -10,7 +10,7 @@ import { useMediaQuery } from 'react-responsive';
 import { HamburgerMenuButton } from 'components/HamburgerMenuButton/HamburgerMenuButton';
 import { NavigationMenu } from 'components/NavigationMenu/NavigationMenu';
 import { useDispatch } from 'react-redux';
-import { toogleMainSectionShowed } from 'redux/sharedLayoutSlice';
+import { toogleMainSectionShowed } from 'redux/sharedLayout/sharedLayoutSlice';
 
 const SharedSearchBar = () => {
   const navigate = useNavigate();

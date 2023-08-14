@@ -61,4 +61,5 @@ export const {
   addDislike,
   deleteDislike,
 } = votingViewSlice.actions;
+
 export default votingViewSlice.reducer;

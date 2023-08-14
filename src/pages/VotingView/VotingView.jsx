@@ -1,7 +1,7 @@
 import styles from './VotingView.module.scss';
 import { CategoryTitle } from 'components/CategoryTitle/CategoryTitle';
 import { useGetRandomImageQuery } from 'services/catApi';
-import { addLike, addFavourite, addDislike } from 'redux/votingViewSlice';
+import { addLike, addFavourite, addDislike } from 'redux/votingView/votingViewSlice';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { nanoid } from '@reduxjs/toolkit';
@@ -36,33 +36,19 @@ const VotingView = () => {
 
   return (
     <section>
-      <CategoryTitle categoryName="voting" />
+      <CategoryTitle categoryName='voting' />
       <div className={styles.imgWrap}>
         {isFetching && <Loader />}
-        {!isFetching && (
-          <img src={data && data.url} alt="cat" className={styles.catImage} />
-        )}
+        {!isFetching && <img src={data && data.url} alt='cat' className={styles.catImage} />}
         <ul className={styles.buttonList}>
           <li className={styles.buttonItem}>
-            <button
-              className={styles.addButton}
-              id="likeBtn"
-              onClick={handleVoting}
-            ></button>
+            <button className={styles.addButton} id='likeBtn' onClick={handleVoting}></button>
           </li>
           <li className={styles.buttonItem}>
-            <button
-              className={styles.addButton}
-              id="favouriteBtn"
-              onClick={handleVoting}
-            ></button>
+            <button className={styles.addButton} id='favouriteBtn' onClick={handleVoting}></button>
           </li>
           <li className={styles.buttonItem}>
-            <button
-              className={styles.addButton}
-              id="dislikeBtn"
-              onClick={handleVoting}
-            ></button>
+            <button className={styles.addButton} id='dislikeBtn' onClick={handleVoting}></button>
           </li>
         </ul>
       </div>

@@ -5,8 +5,13 @@ import { Link, useLocation } from 'react-router-dom';
 import styles from './MasonryGalleryItem.module.scss';
 import deleteIcon from './icons/delete.svg';
 import favouriteIcon from './icons/favourite.svg';
-import { deleteLike, deleteFavourite, deleteDislike, addFavourite } from 'redux/votingViewSlice';
-import { getFavouritesImages } from 'redux/selectors';
+import {
+  deleteLike,
+  deleteFavourite,
+  deleteDislike,
+  addFavourite,
+} from 'redux/votingView/votingViewSlice';
+import { getFavouritesImages } from 'redux/votingView/selectors';
 
 export const MasonryGalleryItem = ({ breed, index, isType1 }) => {
   const location = useLocation();
@@ -46,54 +51,55 @@ export const MasonryGalleryItem = ({ breed, index, isType1 }) => {
     }
   };
 
-  const containerClassName = isType1 ? styles[`type1Item_${index + 1}`] : styles[`type2Item_${index + 1}`];
+  const containerClassName = isType1
+    ? styles[`type1Item_${index + 1}`]
+    : styles[`type2Item_${index + 1}`];
 
-  return (
- location.pathname === '/category/gallery' ? (
-      <div
-        key={breed.id}
-        state={{ from: location }}
-        onClick={() => handleImageAction(breed)}
-        className={classNames(containerClassName, styles.galleryItems)}
-      >
-        <img
-          src={likedImages.includes(breed.id) ? deleteIcon : favouriteIcon}
-          alt={likedImages.includes(breed.id) ? 'delete' : 'add to favourite'}
-          className={styles.deleteIcon}
-        />
+  return location.pathname === '/category/gallery' ? (
+    <div
+      key={breed.id}
+      state={{ from: location }}
+      onClick={() => handleImageAction(breed)}
+      className={classNames(containerClassName, styles.galleryItems)}
+    >
+      <img
+        src={likedImages.includes(breed.id) ? deleteIcon : favouriteIcon}
+        alt={likedImages.includes(breed.id) ? 'delete' : 'add to favourite'}
+        className={styles.deleteIcon}
+      />
 
-        <img
-          src={
-            breed.image
-              ? breed.image.url
-              : 'https://1080motion.com/wp-content/uploads/2018/06/NoImageFound.jpg.png'
-          }
-          className={styles.galleryImg}
-          alt={breed.name ? breed.name : 'cat'}
-        />
-      </div>
-    ) : (
-      <Link
-        key={breed.id}
-        to={breed.name ? `/category/breeds/${breed.id}` : ''}
-        state={{ from: location }}
-        onClick={() => handleImageAction(breed)}
-        className={classNames(containerClassName, styles.galleryItems)}
-      >
-        <img
-          src={
-            breed.image
-              ? breed.image.url
-              : 'https://1080motion.com/wp-content/uploads/2018/06/NoImageFound.jpg.png'
-          }
-          className={styles.galleryImg}
-          alt={breed.name ? breed.name : 'cat'}
-        />
-        {breed.name && (
-          <button type='button' className={styles.galleryButton}>
-            {breed.name}
-          </button>
-        )}
-      </Link>
-    ))
+      <img
+        src={
+          breed.image
+            ? breed.image.url
+            : 'https://1080motion.com/wp-content/uploads/2018/06/NoImageFound.jpg.png'
+        }
+        className={styles.galleryImg}
+        alt={breed.name ? breed.name : 'cat'}
+      />
+    </div>
+  ) : (
+    <Link
+      key={breed.id}
+      to={breed.name ? `/category/breeds/${breed.id}` : ''}
+      state={{ from: location }}
+      onClick={() => handleImageAction(breed)}
+      className={classNames(containerClassName, styles.galleryItems)}
+    >
+      <img
+        src={
+          breed.image
+            ? breed.image.url
+            : 'https://1080motion.com/wp-content/uploads/2018/06/NoImageFound.jpg.png'
+        }
+        className={styles.galleryImg}
+        alt={breed.name ? breed.name : 'cat'}
+      />
+      {breed.name && (
+        <button type='button' className={styles.galleryButton}>
+          {breed.name}
+        </button>
+      )}
+    </Link>
+  );
 };

@@ -5,10 +5,10 @@ import './index.scss';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/lib/integration/react';
-import { persistor, store } from './redux/store';
+import { persistor, store } from './redux/store/store';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <BrowserRouter basename="/world-of-cats/">
+  <BrowserRouter basename='/world-of-cats/'>
     <React.StrictMode>
       <Provider store={store}>
         <PersistGate persistor={persistor} loading={null}>
@@ -16,5 +16,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         </PersistGate>
       </Provider>
     </React.StrictMode>
-  </BrowserRouter>
+  </BrowserRouter>,
 );

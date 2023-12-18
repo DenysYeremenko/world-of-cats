@@ -1,11 +1,11 @@
 {
   "files": {
     "main.css": "/world-of-cats/static/css/main.683265e9.css",
-    "main.js": "/world-of-cats/static/js/main.4f38e318.js",
+    "main.js": "/world-of-cats/static/js/main.1bdbb94c.js",
     "static/css/133.a2c0fc6d.chunk.css": "/world-of-cats/static/css/133.a2c0fc6d.chunk.css",
     "static/js/133.ef9ba77c.chunk.js": "/world-of-cats/static/js/133.ef9ba77c.chunk.js",
     "static/css/922.b6d64c11.chunk.css": "/world-of-cats/static/css/922.b6d64c11.chunk.css",
-    "static/js/922.cf0c0cad.chunk.js": "/world-of-cats/static/js/922.cf0c0cad.chunk.js",
+    "static/js/922.60fcde40.chunk.js": "/world-of-cats/static/js/922.60fcde40.chunk.js",
     "static/css/998.0f81994e.chunk.css": "/world-of-cats/static/css/998.0f81994e.chunk.css",
     "static/js/998.8bdf24a1.chunk.js": "/world-of-cats/static/js/998.8bdf24a1.chunk.js",
     "static/css/397.78d59816.chunk.css": "/world-of-cats/static/css/397.78d59816.chunk.css",
@@ -44,11 +44,11 @@
     "static/media/close.svg": "/world-of-cats/static/media/close.dd314bb6396f4801da62ec937453fd03.svg",
     "static/media/menu.svg": "/world-of-cats/static/media/menu.149bd42f9371cd5442aa1e7dbc2fe8f1.svg",
     "main.683265e9.css.map": "/world-of-cats/static/css/main.683265e9.css.map",
-    "main.4f38e318.js.map": "/world-of-cats/static/js/main.4f38e318.js.map",
+    "main.1bdbb94c.js.map": "/world-of-cats/static/js/main.1bdbb94c.js.map",
     "133.a2c0fc6d.chunk.css.map": "/world-of-cats/static/css/133.a2c0fc6d.chunk.css.map",
     "133.ef9ba77c.chunk.js.map": "/world-of-cats/static/js/133.ef9ba77c.chunk.js.map",
     "922.b6d64c11.chunk.css.map": "/world-of-cats/static/css/922.b6d64c11.chunk.css.map",
-    "922.cf0c0cad.chunk.js.map": "/world-of-cats/static/js/922.cf0c0cad.chunk.js.map",
+    "922.60fcde40.chunk.js.map": "/world-of-cats/static/js/922.60fcde40.chunk.js.map",
     "998.0f81994e.chunk.css.map": "/world-of-cats/static/css/998.0f81994e.chunk.css.map",
     "998.8bdf24a1.chunk.js.map": "/world-of-cats/static/js/998.8bdf24a1.chunk.js.map",
     "397.78d59816.chunk.css.map": "/world-of-cats/static/css/397.78d59816.chunk.css.map",
@@ -60,6 +60,6 @@
   },
   "entrypoints": [
     "static/css/main.683265e9.css",
-    "static/js/main.4f38e318.js"
+    "static/js/main.1bdbb94c.js"
   ]
 }

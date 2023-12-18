@@ -3,8 +3,6 @@ import { CategoryTitle } from 'components/CategoryTitle/CategoryTitle';
 import { useGetRandomImageQuery } from 'services/catApi';
 import { addLike, addFavourite, addDislike } from 'redux/votingView/votingViewSlice';
 import { useDispatch } from 'react-redux';
-import { useState } from 'react';
-import { nanoid } from '@reduxjs/toolkit';
 import { Loader } from 'components/Loader/Loader';
 import { VotingsHitoryList } from 'components/VotingsHitoryList/VotingsHitoryList';
 

@@ -37,21 +37,6 @@ export const SharedLayout = props => {
         <h1 className={styles.title}>Hi, Cat Admirer!</h1>
         <p className={styles.headerCaption}>Welcome to World of Cats</p>
         <p className={styles.navCaption}>Lets start using The Cat API</p>
-        <ul>
-          <li>
-            Voting page: <span className={styles.readyText}>ready</span>
-          </li>
-          <li>
-            Breeds page: <span className={styles.readyText}>ready</span>
-          </li>
-          <li>
-            Gallery page: <span className={styles.readyText}>ready</span>
-          </li>
-          <li>
-            Likes, Favourites, Dislikes pages: <span className={styles.readyText}>ready</span>
-          </li>
-        </ul>
-
         <NavigationMenu handleNavLink={handleNavLink} />
       </div>
       {mainShowed && (

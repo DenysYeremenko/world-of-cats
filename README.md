@@ -7,8 +7,6 @@ of cats
 
 - Add to personal library likes, favourites and dislikes cat photos on [Voting](https://denysyeremenko.github.io/world-of-cats/category/voting) page
 - Search information by breed on [Search](https://denysyeremenko.github.io/world-of-cats/category/search/) and [Breeds](https://denysyeremenko.github.io/world-of-cats/category/breeds?page=0&limit=5&order=ASC) pages
-- Gallery page is being realized
-- Responsive web design is being realized
 
 ## Tech Stack
 

@@ -11,7 +11,7 @@ import { VotingsHitoryList } from 'components/VotingsHitoryList/VotingsHitoryLis
 const VotingView = () => {
   const [fetchIncrement, setFetchIncrement] = useState('');
   const dispatch = useDispatch();
-  const { data, isFetching } = useGetRandomImageQuery(fetchIncrement);
+  const { data, isFetching } = useGetRandomImageQuery();
 
   const handleVoting = e => {
     const buttonId = e.target.id;

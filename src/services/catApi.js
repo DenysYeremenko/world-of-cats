@@ -53,8 +53,8 @@ export const catApi = createApi({
       query: (queryName) => `breeds/search?q=${queryName}`,
     }),
     getRandomImage: builder.query({
-      query: 'images/search',
-      transformResponse: (response) => transformImageResponse(response[0]),
+      query: () => `images/search`,
+      transformResponse: (response) => response[0],
     }),
     getRandomImages: builder.query({
       query: ({ breed, order, limit }) =>

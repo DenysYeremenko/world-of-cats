@@ -9,7 +9,6 @@ import { Loader } from 'components/Loader/Loader';
 import { VotingsHitoryList } from 'components/VotingsHitoryList/VotingsHitoryList';
 
 const VotingView = () => {
-  const [fetchIncrement, setFetchIncrement] = useState('');
   const dispatch = useDispatch();
   const { data, isFetching } = useGetRandomImageQuery();
 
@@ -19,15 +18,15 @@ const VotingView = () => {
     switch (buttonId) {
       case 'likeBtn':
         dispatch(addLike({ url: data.url, id: data.id }));
-        setFetchIncrement(nanoid());
+        
         break;
       case 'favouriteBtn':
         dispatch(addFavourite({ url: data.url, id: data.id }));
-        setFetchIncrement(nanoid());
+        
         break;
       case 'dislikeBtn':
         dispatch(addDislike({ url: data.url, id: data.id }));
-        setFetchIncrement(nanoid());
+        
         break;
       default:
         break;

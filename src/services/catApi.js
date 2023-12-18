@@ -8,8 +8,6 @@ const buildBreedQuery = (breed) => (breed !== DEFAULT_BREED ? `&breed_ids=${bree
 const buildImagesQuery = ({ breed, order, limit }) =>
   `order=${order}${buildBreedQuery(breed)}&limit=${limit}`;
 
-const getRandomImageQuery = () => 'images/search';
-
 const transformImageResponse = (response) => ({
   image: { url: response.url },
   id: response.id,
